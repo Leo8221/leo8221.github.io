@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Leonardo Mena | Economía aplicada y análisis de datos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Descripción para SEO y redes -->
+  <meta name="description" content="Portafolio de Leonardo Mena, estudiante de Economía especializado en análisis de datos, política pública y vulnerabilidad económica territorial en la República Dominicana.">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card-bg: #111827;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.1);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --shadow-soft: 0 18px 45px rgba(15,23,42,0.7);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --transition-fast: 0.18s ease-out;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 42%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout base */
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0 3rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    /* Navbar */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.92), rgba(15,23,42,0.55), transparent);
+      border-bottom: 1px solid rgba(15,23,42,0.8);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: radial-gradient(circle at 0 0, #38bdf8, #0f172a 60%);
+      color: #e5e7eb;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.9);
+    }
+
+    .brand-text-main {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .brand-text-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.5rem;
+      border-radius: 999px;
+      transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+      background: rgba(15,23,42,0.9);
+      transform: translateY(-1px);
+    }
+
+    /* Botones */
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.65rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background var(--transition-fast),
+                  border-color var(--transition-fast),
+                  transform var(--transition-fast),
+                  box-shadow var(--transition-fast);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      box-shadow: 0 16px 40px rgba(56,189,248,0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 55px rgba(56,189,248,0.6);
+    }
+
+    .btn-ghost {
+      background: rgba(15,23,42,0.9);
+      border-color: rgba(148,163,184,0.4);
+      color: var(--text-main);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15,23,42,1);
+      border-color: rgba(148,163,184,0.7);
+      transform: translateY(-1px);
+    }
+
+    .btn span.icon {
+      font-size: 1rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding-top: 3.5rem;
+      padding-bottom: 2rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.18), rgba(15,23,42,0.95));
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34,197,94,0.18);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span.accent {
+      color: #38bdf8;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 30rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1.7rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.68rem;
+      color: #6b7280;
+    }
+
+    .hero-meta-value {
+      color: #e5e7eb;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(31,41,55,0.95);
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.5rem 1.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-card-pill {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56,189,248,0.7);
+      background: rgba(15,23,42,0.95);
+      color: #bfdbfe;
+    }
+
+    .hero-card-main {
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-highlight {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card-highlight span {
+      color: #38bdf8;
+    }
+
+    .hero-card-text {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      margin-top: 1rem;
+    }
+
+    .stat-card {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(31,41,55,0.95);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.1), #020617);
+      padding: 0.6rem 0.7rem;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: #9ca3af;
+      margin-bottom: 0.12rem;
+    }
+
+    .stat-value {
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .hero-card-footer {
+      margin-top: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tech-pill {
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      font-size: 0.7rem;
+      color: #9ca3af;
+      background: rgba(15,23,42,0.95);
+    }
+
+    .hero-orbit {
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      border: 1px dashed rgba(148,163,184,0.4);
+      opacity: 0.5;
+    }
+
+    .hero-orbit-dot {
+      position: absolute;
+      top: 22%;
+      left: 15%;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #38bdf8, #0f172a);
+      box-shadow: 0 0 30px rgba(56,189,248,0.85);
+    }
+
+    /* Secciones genéricas */
+
+    .section-heading {
+      margin-bottom: 2.2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6b7280;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+    }
+
+    /* Sobre mí */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2rem;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .about-text p + p {
+      margin-top: 0.9rem;
+    }
+
+    .about-meta-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    .about-meta-list li + li {
+      margin-top: 0.3rem;
+    }
+
+    .about-highlight {
+      background: rgba(15,23,42,0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(31,41,55,0.95);
+      padding: 1rem 1.1rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .about-highlight strong {
+      color: var(--text-main);
+    }
+
+    /* Habilidades */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      border-radius: var(--radius-lg);
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(31,41,55,0.95);
+      padding: 0.9rem;
+      font-size: 0.83rem;
+    }
+
+    .skill-title {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+
+    .skill-tag {
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,1);
+      border: 1px solid rgba(55,65,81,0.9);
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    /* Proyectos */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      border-radius: var(--radius-lg);
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(31,41,55,0.95);
+      padding: 1rem 1.1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 180px;
+      transition: border-color var(--transition-fast),
+                  transform var(--transition-fast),
+                  box-shadow var(--transition-fast),
+                  background var(--transition-fast);
+    }
+
+    .project-card:hover {
+      border-color: rgba(56,189,248,0.7);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(15,23,42,0.9);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.09), #020617);
+    }
+
+    .project-title {
+      font-size: 0.98rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .project-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.3rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .project-link {
+      font-size: 0.78rem;
+      color: #38bdf8;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      text-decoration: none;
+    }
+
+    .project-link span.icon {
+      font-size: 0.9rem;
+    }
+
+    /* Contacto */
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(31,41,55,0.95);
+      padding: 1.3rem 1.2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    .contact-list li + li {
+      margin-top: 0.4rem;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-value {
+      color: var(--text-main);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .contact-link {
+      font-size: 0.85rem;
+      color: #93c5fd;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .contact-link span.icon {
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 1.8rem 0 2.4rem;
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      border-top: 1px solid rgba(31,41,55,0.9);
+      padding-top: 1rem;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .about-grid,
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-inner {
+        padding-top: 0.8rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .navbar-inner {
+        padding-inline: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding-inline: 1.2rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-subtitle {
+        max-width: none;
+      }
+
+      .hero-card {
+        margin-top: 1.2rem;
+      }
+
+      .footer-inner {
+        padding-inline: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="brand-logo">LM</div>
+        <div>
+          <div class="brand-text-main">Leonardo Mena</div>
+          <div class="brand-text-sub">Economía aplicada y análisis de datos</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyecto</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="inicio" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-tag">
+          <div class="hero-tag-dot"></div>
+          <span>Portafolio académico: vulnerabilidad económica territorial en la República Dominicana</span>
+        </div>
+
+        <h1 class="hero-title">
+          Economía, datos y <span class="accent">territorio</span> para entender la vulnerabilidad.
+        </h1>
+
+        <p class="hero-subtitle">
+          Estudiante de Economía especializado en análisis de datos para política pública y desarrollo.
+          Mi proyecto principal estudia la vulnerabilidad económica territorial en la República Dominicana (2016–2024)
+          usando datos oficiales y herramientas cuantitativas.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="CV_Leonardo_Mena.pdf" target="_blank" rel="noopener">
+            <span class="icon">📄</span>
+            <span>Ver CV en PDF</span>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/Leo8221" target="_blank" rel="noopener">
+            <span class="icon">🐙</span>
+            <span>GitHub / Portafolio técnico</span>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Ubicación</div>
+            <div class="hero-meta-value">Santo Domingo, República Dominicana</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Formación</div>
+            <div class="hero-meta-value">Economía, UASD (índice 93.8)</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-label">Enfoque actual</div>
+            <div class="hero-meta-value">Vulnerabilidad territorial, pobreza y desarrollo local</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Resumen rápido de perfil">
+        <div class="hero-card-header">
+          <div class="hero-card-title">Proyecto principal</div>
+          <div class="hero-card-pill">Vulnerabilidad económica · RD</div>
+        </div>
+
+        <div class="hero-card-main">
+          <div class="hero-card-highlight">
+            <span>Vulnerabilidad Económica Territorial</span> en la República Dominicana (2016–2024).
+          </div>
+          <p class="hero-card-text">
+            Analizo cómo dimensiones como pobreza, empleo, estructura productiva y acceso a servicios
+            se combinan territorialmente para generar vulnerabilidad económica, a nivel provincial
+            y regional, utilizando datos oficiales y métricas compuestas.
+          </p>
+        </div>
+
+        <div class="hero-card-grid">
+          <div class="stat-card">
+            <div class="stat-label">Formación</div>
+            <div class="stat-value">UASD · Economía</div>
+            <div class="stat-label">Graduación estimada 2026</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Horizonte de análisis</div>
+            <div class="stat-value">2016–2024</div>
+            <div class="stat-label">Series anuales y panel territorial</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Dimensiones</div>
+            <div class="stat-value">Pobreza y empleo</div>
+            <div class="stat-label">Más estructura productiva y servicios</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Herramientas</div>
+            <div class="stat-value">R y datos oficiales</div>
+            <div class="stat-label">Limpieza, índices y visualización</div>
+          </div>
+        </div>
+
+        <div class="hero-card-footer">
+          <div class="hero-tech">
+            <span class="tech-pill">R · tidyverse</span>
+            <span class="tech-pill">Series de tiempo</span>
+            <span class="tech-pill">Datos territoriales</span>
+            <span class="tech-pill">Visualización</span>
+          </div>
+          <div style="font-size:0.7rem;color:#6b7280;">
+            Proyecto en desarrollo y actualización continua.
+          </div>
+        </div>
+
+        <div class="hero-orbit">
+          <div class="hero-orbit-dot"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-kicker">Sobre mí</div>
+        <h2 class="section-title">Economía aplicada a territorio, vulnerabilidad y política pública.</h2>
+        <p class="section-subtitle">
+          Mi formación en Economía se cruza con un interés fuerte por el desarrollo territorial
+          y las brechas entre provincias. Me interesa entender no solo los promedios nacionales,
+          sino cómo se distribuye la vulnerabilidad dentro del país.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Soy estudiante de Economía en la Universidad Autónoma de Santo Domingo (UASD),
+            con un índice general de 93.8 y graduación estimada en 2026. Me enfoco en análisis
+            de datos para política pública, desarrollo y evaluación de desigualdades territoriales.
+          </p>
+          <p>
+            Trabajo principalmente con R, Power BI, SQL y Excel para limpiar datos,
+            construir indicadores, generar visualizaciones y estimar modelos. Me interesa que
+            los resultados sirvan para orientar decisiones de política y discusión pública,
+            no solo como ejercicios técnicos.
+          </p>
+          <ul class="about-meta-list">
+            <li><strong>Proyecto actual:</strong> vulnerabilidad económica territorial en la República Dominicana (2016–2024), con énfasis en diferencias provinciales y regionales.</li>
+            <li><strong>Intereses:</strong> pobreza, mercado laboral, estructura productiva, banca, programas sociales y desarrollo regional.</li>
+            <li><strong>Objetivo profesional:</strong> trabajar como analista de datos y economía aplicada en instituciones públicas, banca o regulación, conectando evidencia cuantitativa con decisiones concretas.</li>
+          </ul>
+        </div>
+
+        <div class="about-highlight">
+          <p>
+            <strong>Qué aporta este proyecto</strong><br>
+            El estudio de vulnerabilidad económica territorial busca ir más allá de un solo indicador
+            (como la pobreza) y construir una visión integrada: empleo, ingresos, estructura productiva,
+            acceso a servicios y choques recientes. El objetivo es que sea una base útil para
+            priorizar políticas y entender dónde se concentran las fragilidades del país.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-kicker">Habilidades</div>
+        <h2 class="section-title">Herramientas que uso para estudiar vulnerabilidad y desarrollo.</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-title">Análisis de datos en R</div>
+          <p>
+            Manejo de <code>tidyverse</code>, limpieza de datos, construcción de indicadores,
+            manejo de series de tiempo y bases territoriales.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">tidyverse</span>
+            <span class="skill-tag">dplyr</span>
+            <span class="skill-tag">ggplot2</span>
+            <span class="skill-tag">Quarto</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-title">Visualización y dashboards</div>
+          <p>
+            Construcción de gráficos comparativos, mapas y paneles que permiten ver patrones
+            entre provincias y regiones.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Dashboards</span>
+            <span class="skill-tag">Visualización</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-title">SQL y bases de datos</div>
+          <p>
+            Consultas para extracción, unión y preparación de datos provenientes de distintas fuentes
+            oficiales y bases administrativas.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Joins</span>
+            <span class="skill-tag">Limpieza</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-title">Econometría y análisis aplicado</div>
+          <p>
+            Regresiones, análisis de series de tiempo y enfoques de datos panel simples
+            para interpretar relaciones entre variables económicas.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Regresión</span>
+            <span class="skill-tag">Series de tiempo</span>
+            <span class="skill-tag">Panel básico</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-title">Enfoque territorial</div>
+          <p>
+            Uso de datos provinciales y regionales para analizar brechas internas y
+            priorización de territorios más vulnerables.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Datos provinciales</span>
+            <span class="skill-tag">Desarrollo regional</span>
+            <span class="skill-tag">Brechas territoriales</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-title">Excel para análisis</div>
+          <p>
+            Uso de hojas de cálculo para exploración rápida, resumen de indicadores
+            y soporte a presentaciones y reportes.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Tablas dinámicas</span>
+            <span class="skill-tag">Modelos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTO -->
+  <section id="proyectos">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-kicker">Proyecto principal</div>
+        <h2 class="section-title">Vulnerabilidad Económica Territorial en la República Dominicana (2016–2024).</h2>
+        <p class="section-subtitle">
+          Este proyecto busca construir una mirada integrada de la vulnerabilidad económica
+          en el territorio dominicano, combinando información de distintas fuentes oficiales
+          y años, para entender dónde y cómo se concentran las fragilidades.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Proyecto vulnerabilidad económica -->
+        <article class="project-card">
+          <div>
+            <h3 class="project-title">Vulnerabilidad Económica Territorial en la República Dominicana (2016–2024)</h3>
+            <div class="project-meta">Desarrollo · Territorio · Datos oficiales</div>
+            <p class="project-desc">
+              El proyecto construye y analiza indicadores de vulnerabilidad económica a nivel
+              territorial, integrando dimensiones como pobreza, empleo, estructura productiva y
+              acceso a servicios. Se trabaja con datos oficiales, limpieza y organización en R,
+              visualización y análisis comparativo entre provincias y regiones a lo largo del tiempo.
+            </p>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="skill-tag">R</span>
+              <span class="skill-tag">tidyverse</span>
+              <span class="skill-tag">Series de tiempo</span>
+              <span class="skill-tag">Datos territoriales</span>
+            </div>
+            <a class="project-link" href="https://github.com/Leo8221/vulnerabilidad-economica-rd" target="_blank" rel="noopener">
+              <span>Ver repositorio en GitHub</span>
+              <span class="icon">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-kicker">Contacto</div>
+        <h2 class="section-title">Si el proyecto te interesa, podemos hablar.</h2>
+        <p class="section-subtitle">
+          Correo electrónico y GitHub son los mejores canales para contactarme. Puedo compartir
+          más detalles sobre la metodología, los datos y los resultados del análisis territorial.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <div>
+          <div class="contact-label">Información básica</div>
+          <ul class="contact-list">
+            <li>
+              <div class="contact-label">Nombre</div>
+              <div class="contact-value">Leonardo R. Mena</div>
+            </li>
+            <li>
+              <div class="contact-label">Ubicación</div>
+              <div class="contact-value">Santo Domingo, República Dominicana</div>
+            </li>
+            <li>
+              <div class="contact-label">Rol actual</div>
+              <div class="contact-value">Estudiante de Economía (UASD), analista de datos en formación</div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="contact-label">Canales</div>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:leonardomena824@gmail.com">
+              <span class="icon">✉️</span>
+              <span>leonardomena824@gmail.com</span>
+            </a>
+            <a class="contact-link" href="https://github.com/Leo8221" target="_blank" rel="noopener">
+              <span class="icon">🐙</span>
+              <span>github.com/Leo8221</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        © <span id="year"></span> Leonardo Mena. Portafolio de economía aplicada y análisis territorial.
+      </div>
+      <div>
+        Construido con HTML y CSS sobre GitHub Pages.
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Año automático en el footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
